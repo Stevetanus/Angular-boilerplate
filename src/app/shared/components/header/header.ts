@@ -2,6 +2,7 @@ import { Component, inject, OnDestroy } from '@angular/core';
 import { CustomSelect } from '../custom-select/custom-select';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { CustomOption } from '@core/models/interface';
 
 @Component({
   selector: 'app-header',
