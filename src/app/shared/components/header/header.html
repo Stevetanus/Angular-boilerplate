@@ -1,0 +1,13 @@
+<header
+  class="h-[64px] border-0 border-b border-solid border-secondary-10 flex"
+>
+  <div class="w-[700px] mx-auto px-5 py-2 flex justify-between items-center">
+    <div class="text-3xl">{{ "header.boilerplate" | translate }}</div>
+
+    <app-custom-select
+      [options]="selectOptions"
+      [selectedValue]="selectedValue"
+      (selectedValueChange)="onLanguageChange($event)"
+    ></app-custom-select>
+  </div>
+</header>

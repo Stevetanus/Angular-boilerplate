@@ -1,0 +1,16 @@
+<select
+  #sel
+  [value]="value"
+  (change)="setValue(sel.value)"
+  id="custom-select"
+  class="custom-select"
+>
+  @if (!selectedValue) {
+    <option selected value="">
+      {{ "custom_select.default_language" | translate }}
+    </option>
+  }
+  @for (o of options; track o.value) {
+    <option [value]="o.value">{{ o.label }}</option>
+  }
+</select>

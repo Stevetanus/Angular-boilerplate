@@ -1,0 +1,22 @@
+{
+  "app": {
+    "left": {
+      "HELLO": "Hello",
+      "CONGRATULATIONS": "Congratulations! Your app is running. 🎉"
+    },
+    "right": {
+      "EXPLORE_DOCS": "Explore the Docs",
+      "LEARN_TUTORIALS": "Learn with Tutorials",
+      "AI_PROMPT_BEST_PRACTICES": "Prompt and best practices for AI",
+      "CLI_DOCS": "CLI Docs",
+      "ANGULAR_LANGUAGE_SERVICE": "Angular Language Service",
+      "ANGULAR_DEVTOOLS": "Angular DevTools"
+    }
+  },
+  "header": {
+    "boilerplate": "Angular Boilerpalte"
+  },
+  "custom_select": {
+    "default_language": "Please select a language"
+  }
+}

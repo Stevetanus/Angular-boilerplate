@@ -1,0 +1,22 @@
+{
+  "app": {
+    "left": {
+      "HELLO": "你好",
+      "CONGRATULATIONS": "恭喜！你的網頁應用程式運行中 🎉"
+    },
+    "right": {
+      "EXPLORE_DOCS": "探索文件",
+      "LEARN_TUTORIALS": "透過教學學習",
+      "AI_PROMPT_BEST_PRACTICES": "AI 提示與最佳實踐",
+      "CLI_DOCS": "CLI 文件",
+      "ANGULAR_LANGUAGE_SERVICE": "Angular 語言服務",
+      "ANGULAR_DEVTOOLS": "Angular 開發工具"
+    }
+  },
+  "header": {
+    "boilerplate": "Angular 快速啟動模板"
+  },
+  "custom_select": {
+    "default_language": "請選擇語言"
+  }
+}

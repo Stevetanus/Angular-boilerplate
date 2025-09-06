@@ -200,6 +200,7 @@
   }
 </style>
 
+<app-header></app-header>
 <main class="main">
   <div class="content">
     <div class="left-side">
@@ -248,39 +249,41 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1 class="text-3xl font-bold underline">Hello, {{ title() }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <h1 class="text-3xl font-bold">
+        {{ "app.left.HELLO" | translate }},
+        <span class="underline">
+          {{ title() }}
+        </span>
+      </h1>
+      <p>{{ "app.left.CONGRATULATIONS" | translate }}</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
         @for (
           item of [
-            { title: "Explore the Docs", link: "https://angular.dev" },
             {
-              title: "Learn with Tutorials",
+              title: "app.right.EXPLORE_DOCS" | translate,
+              link: "https://angular.dev",
+            },
+            {
+              title: "app.right.LEARN_TUTORIALS" | translate,
               link: "https://angular.dev/tutorials",
             },
             {
-              title:
-                "Prompt and best practices
-        for AI",
+              title: "app.right.AI_PROMPT_BEST_PRACTICES" | translate,
               link: "https://angular.dev/ai/develop-with-ai",
             },
             {
-              title:
-                "CLI
-        Docs",
+              title: "app.right.CLI_DOCS" | translate,
               link: "https://angular.dev/tools/cli",
             },
             {
-              title:
-                "Angular
-        Language Service",
+              title: "app.right.ANGULAR_LANGUAGE_SERVICE" | translate,
               link: "https://angular.dev/tools/language-service",
             },
             {
-              title: "Angular DevTools",
+              title: "app.right.ANGULAR_DEVTOOLS" | translate,
               link: "https://angular.dev/tools/devtools",
             },
           ];
