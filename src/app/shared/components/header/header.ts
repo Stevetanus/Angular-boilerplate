@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { CustomSelect } from '../custom-select/custom-select';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,48 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header implements OnDestroy {
   private translate = inject(TranslateService);
-  selectOptions = [
-    { value: 'en', label: 'English' },
-    { value: 'zh-tw', label: '繁體中文' },
-  ];
+  private sub = new Subscription();
+  selectOptions: CustomOption[] = [];
   selectedValue = '';
 
+  constructor() {
+    this.buildOptions();
+
+    this.sub.add(
+      this.translate.onLangChange.subscribe(() => {
+        this.buildOptions();
+      }),
+    );
+  }
+
+  private buildOptions() {
+    this.translate.get('custom_select.default_language').subscribe((res) => {
+      this.selectOptions = [
+        { value: '', label: res, selected: this.selectedValue === '' },
+        {
+          value: 'en',
+          label: 'English',
+          selected: this.selectedValue === 'en',
+        },
+        {
+          value: 'zh-tw',
+          label: '繁體中文',
+          selected: this.selectedValue === 'zh-tw',
+        },
+      ];
+    });
+  }
+
   onLanguageChange(event: string) {
-    this.selectedValue = event;
-    this.translate.use(this.selectedValue);
+    if (event) {
+      this.selectedValue = event;
+      this.translate.use(this.selectedValue);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

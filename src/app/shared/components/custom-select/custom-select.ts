@@ -9,13 +9,12 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class CustomSelect {
   private translate = inject(TranslateService);
-  @Input() options: { value: string; label: string }[] = [];
+  @Input() options: CustomOption[] = [];
   @Input() selectedValue = '';
   @Output() selectedValueChange = new EventEmitter<string>();
-  value: string | null = null;
+  value = '';
 
-  setValue(val: string) {
-    this.value = val;
-    this.selectedValueChange.emit(val);
+  setValue(value: string) {
+    this.selectedValueChange.emit(value);
   }
 }
