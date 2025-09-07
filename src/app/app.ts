@@ -1,20 +1,15 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {
-  TranslateService,
-  TranslatePipe,
-  TranslateDirective,
-} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Header } from './shared/components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, TranslatePipe, TranslateDirective],
+  imports: [RouterOutlet, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('boilerplate');
   private translate = inject(TranslateService);
 
   constructor() {
