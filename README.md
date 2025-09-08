@@ -27,7 +27,7 @@ Once the server is running, open your browser and navigate to `http://localhost:
 
 ## Todo
 1. routes-example
-2. firebase-auth, auth-guard
+2. firebase-auth, authGuard
 3. Formmodule, ReactiveFormModule
 4. CI
 5. Popup components

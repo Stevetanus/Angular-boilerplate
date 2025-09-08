@@ -8,7 +8,7 @@ import { CustomOption } from '@core/models/interface';
   selector: 'app-header',
   imports: [CustomSelect, TranslatePipe],
   templateUrl: './header.html',
-  styleUrl: './header.scss',
+  styleUrl: './header.css',
 })
 export class Header implements OnDestroy {
   private translate = inject(TranslateService);

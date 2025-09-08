@@ -5,6 +5,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-login',
   imports: [RouterModule],
   templateUrl: './login.html',
-  styleUrl: './login.scss',
+  styleUrl: './login.css',
 })
 export class Login {}

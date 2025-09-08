@@ -7,7 +7,7 @@ import { Header } from './shared/components/header/header';
   selector: 'app-root',
   imports: [RouterOutlet, Header],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrl: './app.css',
 })
 export class App {
   private translate = inject(TranslateService);

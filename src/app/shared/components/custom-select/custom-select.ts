@@ -6,7 +6,7 @@ import { CustomOption } from '@core/models/interface';
   selector: 'app-custom-select',
   imports: [TranslatePipe],
   templateUrl: './custom-select.html',
-  styleUrl: './custom-select.scss',
+  styleUrl: './custom-select.css',
 })
 export class CustomSelect {
   private translate = inject(TranslateService);

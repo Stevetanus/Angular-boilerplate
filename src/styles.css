@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* 🎨 自訂主題 token */
+@theme {
+  --color-bright-blue: oklch(51.01% 0.274 263.83);
+  --color-electric-violet: oklch(53.18% 0.28 296.97);
+  --color-french-violet: oklch(47.66% 0.246 305.88);
+  --color-vivid-pink: oklch(69.02% 0.277 332.77);
+  --color-hot-red: oklch(61.42% 0.238 15.34);
+  --color-orange-red: oklch(63.32% 0.24 31.68);
+
+  --color-gray-900: oklch(19.37% 0.006 300.98);
+  --color-gray-700: oklch(36.98% 0.014 302.71);
+  --color-gray-400: oklch(70.9% 0.015 304.04);
+
+  --color-red-pink-purple-vertical: linear-gradient(
+    180deg,
+    var(--color-orange-red) 0%,
+    var(--color-vivid-pink) 50%,
+    var(--color-electric-violet) 100%
+  );
+
+  --color-red-pink-purple-horizontal: linear-gradient(
+    90deg,
+    var(--color-orange-red) 0%,
+    var(--color-vivid-pink) 50%,
+    var(--color-electric-violet) 100%
+  );
+}
+
+/* 🌐 基本樣式 */
+@layer base {
+  main {
+    @apply w-full min-h-full flex justify-center items-center p-4 box-border relative;
+  }
+
+  h1 {
+    @apply text-[3.125rem] font-medium leading-none tracking-[-0.125rem] m-0 text-gray-900;
+    font-family:
+      "Inter Tight",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  p {
+    @apply m-0 text-gray-700;
+  }
+}
+
+/* 🧩 元件樣式 */
+@layer components {
+  .angular-logo {
+    @apply max-w-[9.2rem];
+  }
+
+  .content {
+    @apply flex justify-around w-full max-w-[700px] mb-12;
+  }
+
+  .content h1 {
+    @apply mt-7;
+  }
+
+  .content p {
+    @apply mt-6;
+  }
+
+  .divider {
+    background: var(--color-red-pink-purple-vertical);
+    @apply w-px mx-2;
+  }
+
+  .pill-group {
+    @apply flex flex-col items-start flex-wrap gap-5;
+  }
+
+  .pill {
+    @apply flex items-center rounded-[2.75rem] border-0 transition px-3 py-1.5 font-medium text-sm leading-[1.4rem] tracking-[-0.00875rem] whitespace-nowrap;
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group .pill:nth-child(6n + 1) {
+    --pill-accent: var(--color-bright-blue);
+  }
+  .pill-group .pill:nth-child(6n + 2) {
+    --pill-accent: var(--color-electric-violet);
+  }
+  .pill-group .pill:nth-child(6n + 3) {
+    --pill-accent: var(--color-french-violet);
+  }
+  .pill-group .pill:nth-child(6n + 4),
+  .pill-group .pill:nth-child(6n + 5),
+  .pill-group .pill:nth-child(6n + 6) {
+    --pill-accent: var(--color-hot-red);
+  }
+
+  .social-links {
+    @apply flex items-center gap-[0.73rem] mt-6;
+  }
+
+  .social-links path {
+    @apply transition;
+    fill: var(--color-gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--color-gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      @apply flex-col w-max;
+    }
+
+    .divider {
+      background: var(--color-red-pink-purple-horizontal);
+      @apply h-px w-full my-6;
+    }
+  }
+}
+
+/* ⚙️ 工具樣式 */
+@layer utilities {
+  .bg-red-pink-purple-horizontal {
+    background: var(--color-red-pink-purple-horizontal);
+  }
+  .bg-red-pink-purple-vertical {
+    background: var(--color-red-pink-purple-vertical);
+  }
+}

@@ -5,6 +5,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-signup',
   imports: [RouterModule],
   templateUrl: './signup.html',
-  styleUrl: './signup.scss',
+  styleUrl: './signup.css',
 })
 export class Signup {}
